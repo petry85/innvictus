@@ -1,21 +1,46 @@
 :root {
   --azul-escuro: #001F3F;
   --azul-secundario: #0A1F4F;
-  --verde: #00B894;
+  /*--verde: #00B894; verde original*/
+  --verde: #045e4c;
   --branco: #FFFFFF;
 }
 
-body {
+/*body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: var(--azul-escuro);
   color: var(--branco);
+} -- versao 1 */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #001F3F 0%, #0A1F4F 100%);
+  color: var(--branco);
+}
+
+li {
+  list-style-type: none;
+}
+
+/* Logo container: mantém o tamanho do box enquanto a imagem pode ser escalada
+   usando transform. overflow:hidden evita que a imagem 'vaze' o box. */
+.logo {
+  display: inline-block;
+  height: 160px; /* mesmo tamanho visual do box original */
+  overflow: hidden;
+  line-height: 0; /* evita gaps em imagens inline */
 }
 
 .logo img {
-  height: 40px;
+  display: block;
+  height: 140%; /* usa a altura do box (.logo) como referência */
   width: auto;
-  max-width: 100%;
+  max-width: none; /* permitir que o transform aumente a imagem visualmente */
+  transform: scale(1.15); /* aumenta apenas a imagem, não o box */
+  transform-origin: center center;
+  transition: transform 0.2s ease;
 }
 
 /* NAVBAR */
@@ -28,14 +53,11 @@ body {
   position: relative;
 }
 
-.navbar h1 {
-  color: var(--verde);
-}
-
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1rem;
+  font-size: 1.5rem;
 }
 
 .nav-links a {
@@ -58,8 +80,10 @@ body {
 .hero {
   text-align: center;
   padding: 4rem 2rem;
-  background-color: var(--azul-escuro);
-}
+  /*background-color: var(--azul-escuro); fundo simples versao 1 */
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.3); fundo com sombra versao 2
+} 
+
 
 .btn {
   background-color: var(--verde);
@@ -69,43 +93,83 @@ body {
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
+  
 }
 
 /* SECTION */
 .section {
+  text-align: center;
   padding: 3rem 2rem;
   background-color: var(--azul-secundario);
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.6;
 }
 
 .section h2 {
-  text-align: center;
   font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--verde);
 }
 
+.essencia {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.box {
+  background-color: var(--azul-escuro);
+  border: 2px solid var(--verde);
+  border-radius: 10px;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  color: var(--branco);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+
 /* CARDS */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
   margin-top: 2rem;
-  padding: 0 1rem;
+  padding: 0 2rem;
   box-sizing: border-box;
-  justify-content: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card {
   background-color: var(--verde);
   color: var(--branco);
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 2rem;
+  border-radius: 10px;
   text-align: center;
   font-weight: bold;
+  min-height: 100px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
 
 /* RESULTADOS */
 .resultados ul {
@@ -120,38 +184,20 @@ body {
 /* CONTATO */
 .contato a {
   color: var(--verde);
-  text-decoration: underline;
-}
-
-.whatsapp-link {
   text-decoration: none;
-  color: var(--verde);
   font-weight: bold;
-  text-decoration: none;
-}
-
-.whatsapp-link:hover {
-  text-decoration: underline;
-}
-
-.instagram-link {
-  text-decoration: none;
-  color: var(--verde);
-  font-weight: bold;
-  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.instagram-link:hover {
+.contato a:hover {
   text-decoration: underline;
 }
 
-.instagram-link i {
+.contato i {
   font-size: 1.2rem;
 }
-
 
 /* FOOTER */
 footer {
@@ -161,11 +207,11 @@ footer {
   font-size: 0.9rem;
 }
 
-/* RESPONSIVO */
 @media (max-width: 768px) {
-  .logo img {
+  .logo {
     height: 120px;
-    }
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
@@ -186,7 +232,7 @@ footer {
     display: block;
   }
 
-  .nav-links a{
+  .nav-links a {
     padding: 0.5rem 1rem;
   }
 
@@ -196,9 +242,23 @@ footer {
 
   .section {
     padding: 2rem 1rem;
+    font-size: 1.2rem;
   }
 
   .cards {
-    padding: 0 2rem;
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .resultados ul {
+    grid-template-columns: 1fr;
+  }
+
+  .contato ul {
+    padding-left: 0;
+  }
+
+  .contato a {
+    justify-content: center;
   }
 }
