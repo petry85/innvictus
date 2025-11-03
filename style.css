@@ -13,6 +13,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: var(--branco);
+  max-width: 100%;
 }
 
 main {
@@ -50,7 +51,7 @@ li {
   background-color: var(--azul-secundario);
   padding: 1rem 2rem;
   position: relative;
-  width: 100%;
+  max-width: 100%;
 }
 
 .nav-links {
@@ -117,7 +118,7 @@ li {
 }
 
 .section p {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 2rem;
 }
 
@@ -144,7 +145,7 @@ li {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: left;
 }
@@ -157,7 +158,7 @@ li {
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: 2rem;
-  color: var(--verde);
+  color: var(--branco);
   font-weight: bold;
   display: flex;
   align-items: center;
