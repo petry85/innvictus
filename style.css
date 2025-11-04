@@ -245,7 +245,7 @@ li {
 }
 
 .contato-links li a i {
-  font-size: 5rem;
+  font-size: 4rem;
   transition: transform 0.3s ease;
 }
 
@@ -357,3 +357,5 @@ footer {
 
   .section .box h3 {
     font-size: 1.5rem
+  }
+}
