@@ -122,7 +122,22 @@ li {
   margin-bottom: 2rem;
 }
 
-/* ESSENCIA */
+/* DESTAQUE */
+.destaque {
+  color: #00B894;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.destaque:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: underline;
+}
+
+/* QUEM SOMOS - empilhado */
 .essencia {
   display: grid;
   grid-template-columns: 1fr;
@@ -131,11 +146,23 @@ li {
   padding: 0 1rem;
 }
 
-.destaque {
-  color: var(--verde); /*#00B894;  verde original ou escolha outro tom que contraste */
-  font-weight: bold;
+/* SERVIÇOS - grid 2x2 no desktop */
+.grade-servicos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 7rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
 }
 
+@media (min-width: 768px) {
+  .grade-servicos {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2rem;
+  }
+}
+
+/* CARD GENÉRICO */
 .box {
   background-color: var(--azul-escuro);
   border: 2px solid var(--verde);
@@ -145,7 +172,7 @@ li {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   width: 100%;
-  max-width: 800px;
+  max-width: none;
   margin: 0 auto;
   text-align: left;
 }
@@ -174,37 +201,11 @@ li {
   line-height: 1.6;
 }
 
-/* CARDS */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-  padding: 0 2rem;
-  box-sizing: border-box;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.card {
+/* CARD DE SERVIÇO - fundo verde */
+.servico {
   background-color: var(--verde);
+  border: none;
   color: var(--branco);
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: bold;
-  min-height: 100px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* RESULTADOS */
@@ -246,6 +247,14 @@ footer {
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
+  body {
+    max-width: 100%;
+  }
+
+  main {
+    max-width: 100%;
+  }
+
   .logo {
     height: 40px;
   }
@@ -276,14 +285,23 @@ footer {
 
   .hero {
     padding: 2rem 1rem;
-    font-size: 2rem;
+    font-size: 1rem;
     height: auto;
   }
 
   .section {
     padding: 2rem 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     height: auto;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+  .section p {
+    font-size: 1rem;
+    text-align: justify;
   }
 
   .essencia {
@@ -291,14 +309,19 @@ footer {
     padding: 0 1rem;
   }
 
-  .box {
+  .grade-servicos {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .section .box {
     width: 100%;
     font-size: 1.2rem;
   }
 
-  .cards {
-    grid-template-columns: 1fr;
-    padding: 0 1rem;
+  .section .box h3 {
+    font-size: 1.5rem;
+    justify-content: center;
   }
 
   .resultados ul {
