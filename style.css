@@ -137,6 +137,10 @@ li {
   margin-bottom: 2rem;
 }
 
+.intro-quem-somos {
+  text-align: justify;
+}
+
 /* DESTAQUE */
 .destaque {
   color: #00B894;
@@ -224,24 +228,121 @@ li {
   line-height: 1.6;
 }
 
-/* CARD DE SERVIÇO - fundo verde */
+/* ====== CARD DE SERVIÇO - fundo verde ======*/
 .servico {
   background-color: var(--verde);
   border: none;
   color: var(--branco);
 }
 
-/* RESULTADOS */
-.resultados ul {
+/* ======== METODOLOGIA - grid 2x2 ======= */
+
+.grade-metodologia {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
+  grid-template-columns: 1fr;
+  gap: 3rem;
   margin-top: 2rem;
+  padding: 0 1rem;
 }
 
-/* CONTATO - layout horizontal com ícones coloridos */
+@media (min-width: 768px) {
+  .grade-metodologia {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2rem;
+  }
+}
+
+/* Card da metodologia */
+.box-metodo {
+  background-color: var(--azul-escuro);
+  border: 2px solid var(--verde);
+  border-radius: 10px;
+  padding: 2rem;
+  color: var(--branco);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.box-metodo:hover {
+  transform: translateY(-5px);
+}
+
+.box-metodo h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--branco);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.box-metodo h3 i {
+  font-size: 1.8rem;
+  color: var(--verde);
+}
+
+.box-metodo p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+
+/* ======= RESULTADOS grid 2x2 com cards verdes======*/
+
+
+.grade-resultados {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .grade-resultados {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2rem;
+  }
+}
+
+.card-resultado {
+  background-color: var(--verde);
+  border-radius: 10px;
+  padding: 2rem;
+  color: var(--branco);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.card-resultado:hover {
+  transform: translateY(-5px);
+}
+
+.card-resultado h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.card-resultado p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.card-resultado i {
+  font-size: 2.5rem;
+  color: var(--branco);
+  opacity: 0.9;
+}
+
+
+/* CONTATO - layout horizontal e ícones coloridos */
 .contato-links {
   display: flex;
   justify-content: center;
