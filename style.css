@@ -28,7 +28,7 @@ li {
 /* LOGO */
 .logo {
   display: inline-block;
-  height: 160px;
+  height: 90px;
   overflow: hidden;
   line-height: 0;
 }
@@ -58,8 +58,8 @@ li {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1rem;
-  font-size: 1.5rem;
+  gap: 0.1rem;
+  font-size: 1rem;
 }
 
 .nav-links a {
@@ -87,7 +87,12 @@ li {
   margin: 15px;
 }
 
-/* Onde o resultado é invencível */
+/* 1º section hero */
+#quem-somos {
+  margin-top: -150px; /* Compensar a altura da navbar */
+  padding-top: 1rem;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -96,13 +101,21 @@ li {
   text-align: center;
   /*padding: 0.5rem;*/
   height: 100vh;
-  font-size: 4rem;
-  gap: 0.02rem;
+    gap: 0.02rem;
   box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.3);
+  
 }
 
 .hero h2{
   margin-top: -3rem; /*deixar o título mais próximo do topo*/
+  font-size: 4rem;
+}
+
+.hero p {
+  font-size: 2rem;
+  margin: 1.5rem 0;
+  max-width: 800px;
+  line-height: 1.6;
 }
 
 .btn {
@@ -113,6 +126,7 @@ li {
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 2rem;
 }
 
 /* SECTION */
@@ -121,19 +135,18 @@ li {
   text-align: center;
   padding: 3rem 2rem;
   width: 90%;
-  font-size: 1.5rem;
-  line-height: 1.6;
+    line-height: 1.6;
   height: auto;
 }
 
 .section h2 {
-  font-size: 4rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   color: var(--verde);
 }
 
 .section p {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 
@@ -166,7 +179,7 @@ li {
 }
 
 .essencia .box{
-  max-width: 700px; /*largura dos cards*/
+  max-width: 800px; /*largura dos cards*/
 }
 
 .essencia .box h3{
@@ -178,7 +191,7 @@ li {
   display: grid;
   grid-template-columns: 1fr;
   gap: 7rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 0 1rem;
 }
 
@@ -233,6 +246,7 @@ li {
   background-color: var(--verde);
   border: none;
   color: var(--branco);
+
 }
 
 /* ======== METODOLOGIA - grid 2x2 ======= */
@@ -281,7 +295,7 @@ li {
 
 .box-metodo h3 i {
   font-size: 1.8rem;
-  color: var(--verde);
+  color: var(--branco);
 }
 
 .box-metodo p {
@@ -361,7 +375,7 @@ li {
 }
 
 .contato-links li a i {
-  font-size: 4rem;
+  font-size: 2.5rem;
   transition: transform 0.3s ease;
 }
 
@@ -491,4 +505,6 @@ footer {
     font-size: 2rem;
     transition: transform 0.3s ease;
   }
+
+  
 }
