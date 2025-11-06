@@ -356,7 +356,7 @@ li {
 }
 
 
-/* CONTATO - layout horizontal e ícones coloridos */
+/* ==== CONTATO - layout horizontal e ícones coloridos ====*/
 .contato-links {
   display: flex;
   justify-content: center;
@@ -494,10 +494,12 @@ footer {
     max-width: 70%;
   }
 
-  .grade-servicos {
+   .grade-servicos {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 3rem; 
+    margin-top: 1rem;
     padding: 0 1rem;
-    max-width: 70%;
   }
 
   .section .box {
@@ -517,3 +519,4 @@ footer {
   
 
 }
+
