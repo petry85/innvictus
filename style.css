@@ -534,12 +534,19 @@ footer {
     max-width: 70%;
   }
 
+  /* Cards de serviço no celular */
+  .servico {
+    width: 100%;
+    max-width: 320px;   /* controla a largura máxima do card */
+    margin: 0 auto;     /* centraliza o card na tela */
+    font-size: 1.2rem;
+}
   .grade-servicos {
-  grid-template-columns: 1fr;
-  padding: 0 1rem;
-  gap: 3rem;
-  max-width: 90%;
-  margin: 0 auto;
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+    gap: 3rem;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   .card-resultado p {
@@ -570,9 +577,19 @@ footer {
     transition: transform 0.3s ease;
   }
   .section.contato p {
-  text-align: center;
+    text-align: center;
   }
 
-  
+  /* Telefones em branco e sem sublinhado */
+  .telefone-contato span {
+    color: var(--branco);
+    text-decoration: none;
+  }
+
+  /* Caso use <a href="tel:..."> para tornar clicável */
+  .telefone-contato i {
+    color: var(--branco);
+    text-decoration: none;
+  }
 
 }
