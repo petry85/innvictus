@@ -314,6 +314,13 @@ li {
   margin-top: 2rem;
   padding: 0 1rem;
 }
+.card-resultado p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: center; /* centraliza o texto */
+}
+
 
 @media (min-width: 768px) {
   .grade-resultados {
@@ -527,13 +534,27 @@ footer {
     max-width: 70%;
   }
 
-   .grade-servicos {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem; 
-    margin-top: 1rem;
-    padding: 0 1rem;
+  .grade-servicos {
+  grid-template-columns: 1fr;
+  padding: 0 1rem;
+  gap: 3rem;
+  max-width: 90%;
+  margin: 0 auto;
   }
+
+  .card-resultado p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: center; /* centraliza o texto */
+  }
+
+  .servico {
+  width: 100%;
+  max-width: 320px; /* controla a largura máxima do card */
+  margin: 0 auto;
+  }
+
 
   .section .box {
     width: 100%;
@@ -547,6 +568,9 @@ footer {
   .contato-links li a i {
     font-size: 2rem;
     transition: transform 0.3s ease;
+  }
+  .section.contato p {
+  text-align: center;
   }
 
   
